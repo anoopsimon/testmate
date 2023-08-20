@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .tabs-container {
+            display: flex;
+        }
+
+        .tab {
+            padding: 10px;
+            background-color: #f2f2f2;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        .tab.active {
+            background-color: #1D7324;
+            color: white;
+        }
+
+        .table-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            background-color: white;
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tabs-container">
+    <!-- Tabs will be dynamically added using JavaScript -->
+</div>
+
+<div id="tableContainers">
+    <!-- Table containers will be dynamically added using JavaScript -->
+</div>
+
+<script>
+    var columnOrder = ["Locator", "Header", "EnvironmentVariable", "Question", "ControlType"];
+
+    function renderTabsAndTables(jsonData) {
+        var tabsContainer = document.querySelector('.tabs-container');
+        tabsContainer.innerHTML = '';
+
+        var tableContainers = document.getElementById('tableContainers');
+        tableContainers.innerHTML = '';
+
+        for (var i = 0; i < jsonData.length; i++) {
+            var sheet = jsonData[i];
+            var sheetName = Object.keys(sheet)[0];
+            var sheetData = sheet[sheetName];
+
+            // Create tab element
+            var tabElement = document.createElement('div');
+            tabElement.classList.add('tab');
+            tabElement.textContent = sheetName;
+            tabElement.addEventListener('click', function() {
+                var tableContainers = document.querySelectorAll('.table-container');
+                for (var j = 0; j < tableContainers.length; j++) {
+                    tableContainers[j].style.display = 'none';
+                }
+                var tableContainerToShow = document.getElementById(this.textContent.toLowerCase().replace(' ', ''));
+                tableContainerToShow.style.display = 'block';
+
+                var tabs = document.querySelectorAll('.tab');
+                for (var j = 0; j < tabs.length; j++) {
+                    tabs[j].classList.remove('active');
+                }
+                this.classList.add('active');
+            });
+            tabsContainer.appendChild(tabElement);
+
+            // Create table container
+            var tableContainer = document.createElement('div');
+            tableContainer.classList.add('table-container');
+            tableContainer.id = sheetName.toLowerCase().replace(' ', '');
+            tableContainers.appendChild(tableContainer);
+
+            renderTable(tableContainer.id, sheetData);
+        }
+
+        // Show the first table by default
+        var firstTableContainer = document.querySelector('.table-container');
+        if (firstTableContainer) {
+            firstTableContainer.style.display = 'block';
+            var firstTab = document.querySelector('.tab');
+            if (firstTab) {
+                firstTab.classList.add('active');
+            }
+        }
+    }
+
+    // Inside the renderTable function
+    function renderTable(tableId, sheetData) {
+        var tableContainer = document.getElementById(tableId);
+        var table = document.createElement('table');
+        var tableBody = document.createElement('tbody');
+
+        for (var j = 0; j < sheetData.length; j++) {
+            var row = sheetData[j];
+            var newRow = tableBody.insertRow();
+
+            // Display the specified columns in the defined order
+            for (var i = 0; i < columnOrder.length; i++) {
+                var column = columnOrder[i];
+                var cell = newRow.insertCell();
+                cell.textContent = row[column] || ''; // Display empty string if data is missing
+            }
+
+            // Display the remaining columns in their original order
+            for (var column in row) {
+                if (row.hasOwnProperty(column) && columnOrder.indexOf(column) === -1) {
+                    var cell = newRow.insertCell();
+                    cell.textContent = row[column] || ''; // Display empty string if data is missing
+                }
+            }
+        }
+
+        table.appendChild(tableBody);
+        tableContainer.innerHTML = ''; // Clear the existing content
+        tableContainer.appendChild(table);
+    }
+
+
+
+    function renderTables() {
+        var jsonInput = document.getElementById('jsonInput').value;
+        var jsonData;
+
+        try {
+            jsonData = JSON.parse(jsonInput);
+        } catch (error) {
+            alert('Invalid JSON input');
+            return;
+        }
+
+        renderTabsAndTables(jsonData);
+    }
+</script>
+
+<div>
+    <textarea id="jsonInput" rows="10" cols="50" placeholder="Paste your JSON data here"></textarea>
+    <button onclick="renderTables()">Render Tables</button>
+</div>
+
+</body>
+</html>
