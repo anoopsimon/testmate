@@ -1,0 +1,166 @@
+[
+  {"Login": [
+    {
+      "TC1000": "TC1000",
+      "TC1001": "TC1001",
+      "Locator": "Locator",
+      "Header": "Header",
+      "EnvironmentVariable": "EnvironmentVariable",
+      "Question": "Question",
+      "ControlType": "ControlType",
+      "TC1002": "TC1002"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name']",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Given Name",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='lastname'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Last Name",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='dob'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "DOB",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='email'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Email",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='mbile'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Mobile",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Country",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Zip",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    }
+  ]},
+  {"Home": [
+    {
+      "TC1000": "TC1000",
+      "TC1001": "TC1001",
+      "Locator": "Locator",
+      "Header": "Header",
+      "EnvironmentVariable": "EnvironmentVariable",
+      "Question": "Question",
+      "ControlType": "ControlType",
+      "TC1002": "TC1002"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name']",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "AccountName",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='lastname'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Number",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='dob'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Balance",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='email'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "CardIssued",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='mbile'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Outstanding",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Type",
+      "ControlType": "TEXTBOX",
+      "TC1002": "proxy"
+    },
+    {
+      "TC1000": "auto",
+      "TC1001": "detect",
+      "Locator": "a[id='name'",
+      "Header": "Login",
+      "EnvironmentVariable": "user",
+      "Question": "Active",
+      "ControlType": "RADIO",
+      "TC1002": "proxy"
+    }
+  ]}
+]
