@@ -6,6 +6,7 @@
       "Locator": "Locator",
       "Header": "Header",
       "EnvironmentVariable": "EnvironmentVariable",
+      "TC1092": "TC1092",
       "Question": "Question",
       "ControlType": "ControlType",
       "TC1002": "TC1002"
@@ -16,6 +17,7 @@
       "Locator": "a[id='name']",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "AS",
       "Question": "Given Name",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -26,6 +28,7 @@
       "Locator": "a[id='lastname'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "AS",
       "Question": "Last Name",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -36,6 +39,7 @@
       "Locator": "a[id='dob'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "SDA",
       "Question": "DOB",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -46,6 +50,7 @@
       "Locator": "a[id='email'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "GFG",
       "Question": "Email",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -56,6 +61,7 @@
       "Locator": "a[id='mbile'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "KJL",
       "Question": "Mobile",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -66,6 +72,7 @@
       "Locator": "a[id='name'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "ASD",
       "Question": "Country",
       "ControlType": "TEXTBOX",
       "TC1002": "proxy"
@@ -76,9 +83,10 @@
       "Locator": "a[id='name'",
       "Header": "Login",
       "EnvironmentVariable": "user",
+      "TC1092": "ASD",
       "Question": "Zip",
       "ControlType": "TEXTBOX",
-      "TC1002": "proxy"
+      "TC1002": "npproxy"
     }
   ]},
   {"Home": [
@@ -144,7 +152,7 @@
     },
     {
       "TC1000": "auto",
-      "TC1001": "detect",
+      "TC1001": "HGASD",
       "Locator": "a[id='name'",
       "Header": "Login",
       "EnvironmentVariable": "user",

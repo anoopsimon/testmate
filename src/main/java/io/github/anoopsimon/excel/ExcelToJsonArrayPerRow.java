@@ -11,7 +11,8 @@ import java.nio.file.Paths;
 
 public class ExcelToJsonArrayPerRow {
     public static void main(String[] args) throws IOException {
-            String filepath = System.getProperty("user.dir")+"/src/test/resources/testdata/input.xlsx";
+            String inputDirectory = System.getProperty("user.dir")+"/src/test/resources/testdata/";
+            String filepath = inputDirectory+"input.xlsx";
 
             try (Workbook workbook = WorkbookFactory.create(new FileInputStream(filepath))) {
                 JSONArray jsonArray = new JSONArray();
@@ -30,6 +31,7 @@ public class ExcelToJsonArrayPerRow {
                                     cell.getStringCellValue());
                         }
 
+                        if(!rowObject.isEmpty())
                         sheetArray.put(rowObject);
                     }
 
@@ -39,7 +41,7 @@ public class ExcelToJsonArrayPerRow {
                 }
 
 
-                Files.write(Paths.get("duke.json"), jsonArray.toString(2).getBytes());
+                Files.write(Paths.get(inputDirectory+"/input.json"), jsonArray.toString(2).getBytes());
 
                 System.out.println(jsonArray.toString(2)); // Print formatted JSON
             }
